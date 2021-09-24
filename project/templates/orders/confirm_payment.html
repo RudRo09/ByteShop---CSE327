@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="section-content padding-y bg">
+	<div class="container">
+
+		<!-- ============================ COMPONENT 1 ================================= -->
+		<div class="row">
+			<aside class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title mb-4">Confirm Payment</h4>
+						<form action="{% url 'confirm_order' %}" method="POST">
+							{% csrf_token %}
+							<div class="form-row">
+								<div class="col form-group">
+									<label for="">Enter Payment Confirmation Code</label>
+									<input type="text" name="payment_id" class="form-control" required="">
+								</div>		
+							</div>
+
+			<button class="btn btn-primary btn-block" type="submit" name="submit">Confirm Payment</button>
+			</aside> <!-- col.// -->
+
+			
+            </form>
+
+	
+		<!-- ============================ COMPONENT 1 END .// ================================= -->
+
+	</div> <!-- container .//  -->
+</section>
+
+{% endblock %}
